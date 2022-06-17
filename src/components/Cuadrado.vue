@@ -8,6 +8,7 @@ export default {
   name: 'Cuadrado',
   props: {
     value: String,
+    
     winner: Boolean,
     disabled: Boolean
   },

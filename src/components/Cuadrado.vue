@@ -23,7 +23,7 @@ export default {
 
 <style scoped>
 .cuadrado {
-  font-size: 32px;
+  font-size: 50px;
 }
 
 

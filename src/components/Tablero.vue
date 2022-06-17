@@ -36,12 +36,10 @@ export default {
 
 <style scoped>
 .tablero {
-  background-color: aqua;
+  
 }
 
 .tablero-fila {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  grid-template-rows: 1fr;
+  
 }
 </style>

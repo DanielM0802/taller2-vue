@@ -1,41 +1,49 @@
 <template>
-
-    <div class="tablero" v-if="cuadrados">
-
-        <div v-for="fila in 3" :key="fila" class="tablero-fila">
-
-            <cuadrado v-for="i in 3" :key="indexPorFila(i, fila)" :value="cuadrados[indexPorFila(i, fila)]" 
-                :disabled="!!ganador" :ganador="!!ganador && ganador.includes(indexPorFila(i, fila))" @click="click(i, fila)" />
-
-        </div>
-
+  <div class="board" v-if="squares">
+    <div v-for="row in 3" :key="row" class="board-row">
+      <Cuadrado v-for="i in 3" :key="indexByRow(i, row)"
+        :value="squares[indexByRow(i, row)]"
+        :disabled="!!winner"
+        :winner="!!winner && winner.includes(indexByRow(i, row))"
+        @click="click(i, row)" />
+    </div>
   </div>
-
 </template>
 
 <script>
-
 export default {
   name: 'Tablero',
   props: {
-    cuadrados: Array,
-    ganador: Array
+    squares: Array,
+    winner: Array
   },
   components: {
     Cuadrado: () => import('./Cuadrado')
   },
   methods: {
-    indexPorFila (index, fila, max = 3) {
-      return (fila * max + index) - (max + 1)
+    indexByRow (index, row, max = 3) {
+      return (row * max + index) - (max + 1)
     },
 
-    click (index, fila) {
-      this.$emit('click', this.indexPorFila(index, fila));
+    click (index, row) {
+      this.$emit('click', this.indexByRow(index, row));
     }
   }
 }
-
 </script>
 
 <style scoped>
+.board {
+  width: 65vmin;
+  height: 65vmin;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: repeat(3, 1fr);
+}
+
+.board-row {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: 1fr;
+}
 </style>

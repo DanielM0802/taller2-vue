@@ -1,17 +1,19 @@
 <template>
-  <Cuadrado/>
+  <div id="app">
+    <Juego />
+  </div>
 </template>
 
 <script>
-import Cuadrado from './components/Cuadrado.vue'
 export default {
   name: 'App',
   components: {
-    Cuadrado
+    Juego: () => import('./components/Juego')
   }
 }
 </script>
 
 <style>
+
 
 </style>

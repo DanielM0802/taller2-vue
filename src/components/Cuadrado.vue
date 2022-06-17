@@ -1,28 +1,35 @@
 <template>
-    <button class="cuadrado" :class="[ contenido, { 'ganador': ganador } ]"
-    :disabled="desactivado" @click="onClick">{{contenido}}</button>
+  <button class="cuadrado" :class="[ value, { 'winner': winner } ]"
+    :disabled="disabled" @click="click">{{value}}</button>
 </template>
 
 <script>
 export default {
+  name: 'Cuadrado',
   props: {
-    contenido: String,
-    ganador: Boolean,
-    desactivado: Boolean
+    value: String,
+    winner: Boolean,
+    disabled: Boolean
   },
   methods: {
-    onClick () {
+    click () {
       this.$emit('click')
     }
   }
 }
 </script>
 
-<style>
+<style scoped>
 .cuadrado {
-  background: red;
- 
+  font-size: 32px;
 }
 
 
+.cuadrado.X {
+  color: red;
+}
+
+.cuadrado.O {
+  color: blue;
+}
 </style>

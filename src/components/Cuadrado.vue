@@ -8,13 +8,14 @@ export default {
   name: 'Cuadrado',
   props: {
     value: String,
-    
     winner: Boolean,
     disabled: Boolean
   },
   methods: {
     click () {
+
       this.$emit('click')
+
     }
   }
 }

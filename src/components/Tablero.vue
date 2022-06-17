@@ -34,6 +34,7 @@ export default {
 
 <style scoped>
 .board {
+  
   width: 65vmin;
   height: 65vmin;
   display: grid;

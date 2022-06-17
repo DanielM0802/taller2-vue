@@ -1,13 +1,16 @@
 <template>
+
     <div class="tablero" v-if="cuadrados">
-    <div v-for="fila in 3" :key="fila" class="tablero-fila">
-      <cuadrado v-for="i in 3" :key="indexPorFila(i, fila)"
-        :value="cuadrados[indexPorFila(i, fila)]"
-        :disabled="!!ganador"
-        :ganador="!!ganador && ganador.includes(indexPorFila(i, fila))"
-        @click="click(i, fila)" />
-    </div>
+
+        <div v-for="fila in 3" :key="fila" class="tablero-fila">
+
+            <cuadrado v-for="i in 3" :key="indexPorFila(i, fila)" :value="cuadrados[indexPorFila(i, fila)]" 
+                :disabled="!!ganador" :ganador="!!ganador && ganador.includes(indexPorFila(i, fila))" @click="click(i, fila)" />
+
+        </div>
+
   </div>
+
 </template>
 
 <script>
@@ -35,11 +38,4 @@ export default {
 </script>
 
 <style scoped>
-.tablero {
-  
-}
-
-.tablero-fila {
-  
-}
 </style>

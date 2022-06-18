@@ -8,18 +8,18 @@
       <Tablero :squares="squares" :winner="winner" @click="click" />
 
       <div class="game-info">
-        <p v-if="stepNumber === 0">
+        <p v-if="stepNumber === 0" class="msg">
           Es turno del jugador: &nbsp;<b :class="currentPlayer">{{  currentPlayer }}</b>!
         </p>
-        <p v-else-if="!!winner">
+        <p v-else-if="!!winner" class="msg">
           El ganador es: &nbsp;<b :class="currentPlayer"> {{ currentPlayer }}</b>!&nbsp;
           <button @click="restart" class="btn-new-game">Jugar de nuevo</button>
         </p>
-        <p v-else-if="stepNumber > 8">
-          Empate
+        <p v-else-if="stepNumber > 8" class="msg">
+          ¡Empate!
           <button @click="restart" class="btn-new-game">Jugar de nuevo</button>
         </p>
-        <p v-else>
+        <p v-else class="msg">
           Es turno del jugador: &nbsp;<b :class="currentPlayer">{{ currentPlayer }}</b>
         </p>
       </div>
@@ -150,6 +150,8 @@ export default {
   outline: none;
 }
 
-
+.msg {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
 
 </style>

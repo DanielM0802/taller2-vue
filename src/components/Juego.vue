@@ -9,20 +9,18 @@
 
       <div class="game-info">
         <p v-if="stepNumber === 0">
-          Es turno del jugador: <b :class="currentPlayer">{{  currentPlayer }}</b>!
+          Es turno del jugador: &nbsp;<b :class="currentPlayer">{{  currentPlayer }}</b>!
         </p>
         <p v-else-if="!!winner">
-          El ganador es: 
-          &nbsp;<b :class="currentPlayer"> {{ currentPlayer }}</b>!&nbsp;
-          <button @click="restart">Jugar de nuevo</button>
+          El ganador es: &nbsp;<b :class="currentPlayer"> {{ currentPlayer }}</b>!&nbsp;
+          <button @click="restart" class="btn-new-game">Jugar de nuevo</button>
         </p>
         <p v-else-if="stepNumber > 8">
           Empate
-          <button @click="restart">Jugar de nuevo</button>
+          <button @click="restart" class="btn-new-game">Jugar de nuevo</button>
         </p>
         <p v-else>
-          Es turno del jugador:
-          <b :class="currentPlayer">{{ currentPlayer }}</b>
+          Es turno del jugador: &nbsp;<b :class="currentPlayer">{{ currentPlayer }}</b>
         </p>
       </div>
     </div>

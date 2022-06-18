@@ -13,11 +13,11 @@
         </p>
         <p v-else-if="!!winner" class="msg">
           El ganador es: &nbsp;<b :class="currentPlayer"> {{ currentPlayer }}</b>!&nbsp;
-          <button @click="restart" class="btn-new-game">Jugar de nuevo</button>
+          <button @click="restart">Jugar de nuevo</button>
         </p>
         <p v-else-if="stepNumber > 8" class="msg">
           ¡Empate!
-          <button @click="restart" class="btn-new-game">Jugar de nuevo</button>
+          <button @click="restart">Jugar de nuevo</button>
         </p>
         <p v-else class="msg">
           Es turno del jugador: &nbsp;<b :class="currentPlayer">{{ currentPlayer }}</b>
@@ -138,14 +138,16 @@ export default {
 }
 
 .game-info button {
-  text-transform: uppercase;
-  font-weight: 600;
-  font-size: .75em;
-  padding: .5rem 1rem;
-  margin: -.5rem 0 -.5rem 1rem;
-  border: 2px solid #fff;
-  background: #fff5;
-  color: #111;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  font-weight: 500;
+  font-size: 18px;
+  border-width: 0px;
+  border-radius: 13px;
+  height: 40px;
+  width: 170px;
+  margin-left: 40px;
+  background-color: cadetblue;
+  color: white;
   cursor: pointer;
   outline: none;
 }

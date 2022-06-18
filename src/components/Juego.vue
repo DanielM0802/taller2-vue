@@ -12,8 +12,8 @@
           Es turno del jugador: <b :class="currentPlayer">{{  currentPlayer }}</b>!
         </p>
         <p v-else-if="!!winner">
-          El ganador es
-          <b :class="currentPlayer">{{ currentPlayer }}</b>!&nbsp;
+          El ganador es: 
+          &nbsp;<b :class="currentPlayer"> {{ currentPlayer }}</b>!&nbsp;
           <button @click="restart">Jugar de nuevo</button>
         </p>
         <p v-else-if="stepNumber > 8">
@@ -112,6 +112,7 @@ export default {
   margin: 0;
   font-size: 2.25em;
   color: blue;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
 .game-info {
